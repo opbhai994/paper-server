@@ -6,4 +6,4 @@ COPY . .
 
 EXPOSE 25565
 
-CMD ["java", "-Xms512M", "-Xmx2G", "-jar", "server.jar", "nogui"]
+CMD ["sh", "-c", "java -Xms512M -Xmx${MEMORY_LIMIT:-1024M} -jar server.jar nogui"]
